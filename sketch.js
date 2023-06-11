@@ -67,27 +67,27 @@ function draw() {  //it will run infinite times continuously
 
     if(singlePose){
         //uncomment this for skeleton
-        // for(let i=0; i<singlePose.keypoints.length; i++){
-        //     ellipse(singlePose.keypoints[i].position.x, singlePose.keypoints[i].position.y,20);
-        // }
-        // stroke(255,255,255);
-        // strokeWeight(5);
-        // for(let j=0; j<skeleton.length; j++){
-        //     line(skeleton[j][0].position.x, skeleton[j][0].position.y, skeleton[j][1].position.x, skeleton[j][1].position.y)
-        // }
+         for(let i=0; i<singlePose.keypoints.length; i++){
+             ellipse(singlePose.keypoints[i].position.x, singlePose.keypoints[i].position.y,20);
+         }
+         stroke(255,255,255);
+         strokeWeight(5);
+         for(let j=0; j<skeleton.length; j++){
+             line(skeleton[j][0].position.x, skeleton[j][0].position.y, skeleton[j][1].position.x, skeleton[j][1].position.y)
+         }
         
         // for appling filter on face  
-          var distance = calculateDistance(singlePose.leftEye.x, singlePose.leftEye.y, singlePose.rightEye.x, singlePose.rightEye.y);
-        console.log(distance);
-          var slopeAngle = calculateSlopeAngle(singlePose.leftEye.x, singlePose.leftEye.y, singlePose.rightEye.x, singlePose.rightEye.y);
-          var sinValue = sin(radians(slopeAngle));
-          push();
-          translate(singlePose.nose.x+50*sinValue,singlePose.nose.y-distance*0.5);
-          rotate(radians(slopeAngle));
-          imageMode(CENTER);
-          image(specs,0,0,distance*2,distance*2);
-          pop(); 
-        // image(specs,singlePose.leftEye.x-distance*1.5,singlePose.leftEye.y-distance*0.8,distance*2,distance*2);
-        image(smoke,singlePose.nose.x-distance*0.9,singlePose.nose.y+distance*0.5,distance*0.8,distance*0.8);    
+         // var distance = calculateDistance(singlePose.leftEye.x, singlePose.leftEye.y, singlePose.rightEye.x, singlePose.rightEye.y);
+       // console.log(distance);
+         // var slopeAngle = calculateSlopeAngle(singlePose.leftEye.x, singlePose.leftEye.y, singlePose.rightEye.x, singlePose.rightEye.y);
+         // var sinValue = sin(radians(slopeAngle));
+         // push();
+         // translate(singlePose.nose.x+50*sinValue,singlePose.nose.y-distance*0.5);
+         // rotate(radians(slopeAngle));
+         // imageMode(CENTER);
+         // image(specs,0,0,distance*2,distance*2);
+         // pop(); 
+        //// image(specs,singlePose.leftEye.x-distance*1.5,singlePose.leftEye.y-distance*0.8,distance*2,distance*2);
+        //image(smoke,singlePose.nose.x-distance*0.9,singlePose.nose.y+distance*0.5,distance*0.8,distance*0.8);    
     }
 }

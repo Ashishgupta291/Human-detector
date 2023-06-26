@@ -7,10 +7,12 @@ let singlePose,skeleton;
 let ram;
 let videoX,videoY;
 let ashish;
+let videoWidth;
+let videoHeight;
 
 function setup() {                  // it will run single time
-    let videoWidth = windowWidth < 640 ? windowWidth : 640;
-    let videoHeight = windowHeight < 480 ? windowHeight : 480; 
+     videoWidth = windowWidth < 640 ? windowWidth : 640;
+     videoHeight = windowHeight < 480 ? windowHeight : 480; 
     createCanvas(videoWidth,videoHeight);     //it will create a canvas block of 800px  X  500px 
     background(255);
     capture = createCapture({ video: { facingMode: "environment" }});    //it will initiate your camera to take your vdo

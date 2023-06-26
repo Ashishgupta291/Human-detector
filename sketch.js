@@ -45,7 +45,9 @@ function modelLoaded() {
 
 
 function draw() {  //it will run infinite times continuously
-    
+ videoWidth  = windowWidth  < 640 ? windowWidth  : 640;
+ videoHeight = windowHeight < 480 ? windowHeight : 480; 
+resizeCanvas(videoWidth ,videoHeight);  // update canvas dimensions constantly    
     // images and videos(webcam)
 // Calculate the position to center the video
   videoX = (width - capture.width) / 2;

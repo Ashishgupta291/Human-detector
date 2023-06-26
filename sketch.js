@@ -11,7 +11,7 @@ let videoWidth;
 let videoHeight;
 
 function setup() {                  // it will run single time
-     videoWidth = windowWidth < 640 ? windowWidth : 640;
+     videoWidth  = windowWidth  < 640 ? windowWidth  : 640;
      videoHeight = windowHeight < 480 ? windowHeight : 480; 
     createCanvas(videoWidth,videoHeight);     //it will create a canvas block of 800px  X  500px 
     background(255);
@@ -49,13 +49,15 @@ function modelLoaded() {
 function draw() {  //it will run infinite times continuously
  videoWidth  = windowWidth  < 640 ? windowWidth  : 640;
  videoHeight = windowHeight < 480 ? windowHeight : 480; 
-resizeCanvas(videoWidth ,videoHeight);  // update canvas dimensions constantly    
+resizeCanvas(videoWidth ,videoHeight);  // update canvas dimensions constantly     {frame problem and auto canvas together removed}
     // images and videos(webcam)
 // Calculate the position to center the video
   videoX = (width - capture.width) / 2;
   videoY = (height - capture.height) / 2;
 
-// Draw the video at the calculated position
+// Draw the mirror video at the calculated position
+     translate(width,0);
+     scale(-1,1);
     image(capture, videoX, videoY);      // show the vdo picture by picture
     fill(255,0,0);                       //  fill color 
 

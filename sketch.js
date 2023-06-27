@@ -57,7 +57,7 @@ function flipcam(){
     localStorage.setItem('facingMod', facingMod);
     window.location.reload();
 }
-function download(){  saveCanvas("Mypose", "png");}
+function download(){  saveCanvas("Mypose", "png");if(flag==1){captureImage();}}
 function captureImage(){ 
     if(flag==0){capture.pause(); flag=1; document.querySelector(".clicktopic").textContent='New'; document.querySelector(".clicktopic").style.background="rgb(131, 131, 237)";  }
     else{capture.play(); flag=0;document.querySelector(".clicktopic").textContent='Capture';      document.querySelector(".clicktopic").style.background="azure";  }
